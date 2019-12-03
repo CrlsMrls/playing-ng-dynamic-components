@@ -1,0 +1,6 @@
+<h2>Examples</h2>
+<ul>
+  <li *ngFor="let route of routes">
+    <a [routerLink]="['/', route.path]" routerLinkActive="active" >{{route.text}}</a>
+  </li>
+</ul>

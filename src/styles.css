@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+  grid-area: nav;
+}
+
+section {
+  grid-area: content;
+  position: relative;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+article {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "header  header"
+    "nav content"
+    "footer  footer";
+  background-color: #fff;
+  color: #444;
+}
+
+nav,
+header,
+section,
+footer {
+  padding: 50px;
+}
+
+header {
+  background-color: rgba(68, 68, 68, 0.1);
+  border-radius: 5px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
