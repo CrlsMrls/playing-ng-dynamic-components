@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartComponent, FirstComponent, SecondComponent } from './examples/start.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ElementRefExampleComponent } from './examples/ElementRef.component';
+import { ElementRefDirectiveExampleComponent, ElementRefDirective } from './examples/ElementRef.directive';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +15,10 @@ import { NavigationComponent } from './navigation/navigation.component';
     StartComponent,
     FirstComponent,
     SecondComponent,
-    NavigationComponent
+    NavigationComponent,
+    ElementRefExampleComponent,
+    ElementRefDirectiveExampleComponent,
+    ElementRefDirective,
   ],
   imports: [
     BrowserModule,

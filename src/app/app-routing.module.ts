@@ -1,41 +1,33 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule, Component, Type } from '@angular/core';
+import { Routes, RouterModule, Route } from '@angular/router';
 
 import { StartComponent, FirstComponent, SecondComponent } from './examples/start.component';
+import {ElementRefExampleComponent} from './examples/ElementRef.component';
+import { ElementRefDirectiveExampleComponent } from './examples/ElementRef.directive';
 
-export interface RouteMetadata {
-  path: string;
-  text: string;
+export interface RouteMetadata extends Route {
+  title?: string;
 }
 
 export const routesInfo: RouteMetadata[] = [
   {
+    path: '',
+    component: StartComponent,
+  },
+  {
     path: 'first',
-    text: 'First example'
+    title: '@ViewChild in template reference',
+    component: ElementRefExampleComponent,
   },
   {
     path: 'second',
-    text: 'Second example'
-  }
-];
-
-const routes: Routes = [
-  {
-    path: '',
-    component: StartComponent
-  },
-  {
-    path: routesInfo[0].path,
-    component: FirstComponent
-  },
-  {
-    path: routesInfo[1].path,
-    component: SecondComponent
+    title: '@ViewChild in directive',
+    component: ElementRefDirectiveExampleComponent,
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routesInfo)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
